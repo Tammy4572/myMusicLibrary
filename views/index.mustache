@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Music Collection</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Music Collection</h1>
+        <div class="button-div"><a href="/add-item">Add Music Album</a></div>
+    </div>
+    {{#music}}
+    <div class="music-library">
+<div class="collection-item">
+        <p> Title: {{title}}</p>
+        <p> Artist: {{artist}}</p>
+        <p> Genre: {{genre}}</p>
+
+        <h1>Related Titles</h1>
+        {{#relatedMusic}}
+        <p>{{title}} by {{author}} </p>
+        {{/relatedMusic}}
+        <div class="button-div">
+            <a class="button" href="/new-item">Create a New Item</a>
+            <a class="button" href="/edit-item/{{_id}}">Edit Album Selection</a>
+        </div>
+    </div>
+    {{/music}}
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Music Collection</h1>
+    {{#result}}
+    <div class="container">
+        <p>Title: {{title}}</p>
+        <p>Artist: {{artist}}</p>
+        <p>Genre: {{genre}}</p>
+        <h3>Related Albums</h3>
+        {{#relatedAlbums}}
+        <p>{{title}} performed by {{artist}}</p>
+        {{/relatedAlbums}}
+        <form action="/delete/{{_id}}" method="POST">
+            <button type="submit"> Delete Selection </button>
+        </form>
+
+    </div>
+</body>
+</html>

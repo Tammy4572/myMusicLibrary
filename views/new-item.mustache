@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Music Collection</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Add Related Music Collection</h1>
+    {{#result}}
+    <div class="body-container collection">
+        <p> Title: {{title}}</p>
+        <p> Artist: {{artist}}</p>
+        <p> Genre: {{genre}}</p>
+
+        <h1>Related Titles</h1>
+        {{#relatedMusic}}
+        <p>{{title}} by {{author}} </p>
+        {{/relatedMusic}}
+    </div>
+    {{/result}}
+
+    <form action="/add-related/{{#result}}{{/result}}">
+        <h1>Add Title</h1>
+        <input type="text" name="title" placeholder="Album Title: ">
+        <input type="text" name="artist" placeholder="Artist: ">
+        <input type="text" name="genre" placeholder="Genre: ">
+
+        <button type="submit"> Add Title </button>
+    </form>
+</body>
+</html>
